@@ -1,0 +1,23 @@
+.home{
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./bg.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home__txt{
+    font-size: 30rem;
+    font-family: "Semi";
+    color: white;
+}
+
+.home__video  {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Semi";
+    src: local("Semi"),
+    url("./asset/Semi.otf");
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }

@@ -6,7 +6,7 @@ const SpeechRecognitionEvent =
   window.SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent;
 
 export class SpeechDetector {
-  words = ["baise", "obèse", "amour", "l'amour"];
+  words = ["baise", "obèse", "amour", "l'amour","fini","jouie"];
   callback;
   recognition = new SpeechRecognition();
   speechRecognitionList = new SpeechGrammarList();

@@ -41,7 +41,7 @@ export class SpeechDetector {
   }
 
   stop() {
-    recognition.stop();
+    this.recognition.stop();
   }
 
   isFound(arr1, arr2) {

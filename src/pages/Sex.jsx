@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ClapDetector } from "../utils/ClapDetector";
 import { SpeechDetector } from "../utils/SpeechDetector";
 import audio from "../asset/zicmu.mp3";
@@ -9,8 +9,9 @@ export default function Sex() {
   const music = new Audio(audio);
 
   const handleStart = () => {
-    setHasStart(!hasStart);
-    if (music.paused && music.currentTime > 0 && !music.ended) {
+    const isPlaying = !hasStart;
+    setHasStart(isPlaying);
+    if (isPlaying) {
       music.play();
     } else {
       music.pause();
@@ -19,27 +20,25 @@ export default function Sex() {
 
   useEffect(() => {
     const clapDetector = new ClapDetector(undefined, handleStart);
-    clapDetector.onClap(handleStart);
     const speechDetector = new SpeechDetector(handleStart);
+    music.volume = 1;
 
     return () => {
       clapDetector.stop();
-      clapDetector.offClap(handleClap);
       speechDetector.stop();
-      music.stop();
+      music.pause();
     };
-  }, [hasStart, hasClap]);
+  }, [hasStart]);
+
   return (
     <div className="bg-black h-screen w-screen">
-      {hasStart && (
-        <video
-          src={video}
-          autoPlay={true}
-          loop={true}
-          muted
-          className="block h-screen w-screen"
-        />
-      )}
+      <video
+        src={video}
+        autoPlay={true}
+        loop={true}
+        muted
+        className={`${hasStart ? "block" : "hidden"} h-screen w-screen`}
+      />
     </div>
   );
 }

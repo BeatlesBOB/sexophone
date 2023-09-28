@@ -7,7 +7,7 @@ const SpeechRecognitionEvent =
 
 export class SpeechDetector {
   words = ["baise", "obèse", "amour", "l'amour"];
-
+  callback;
   recognition = new SpeechRecognition();
   speechRecognitionList = new SpeechGrammarList();
   grammar =
@@ -15,13 +15,14 @@ export class SpeechDetector {
     this.words.join(" | ") +
     " ;";
 
-  constructor() {
+  constructor(callback) {
     this.speechRecognitionList.addFromString(this.grammar, 1);
     this.recognition.grammars = this.speechRecognitionList;
     this.recognition.continuous = true;
     this.recognition.lang = "fr";
     this.recognition.interimResults = false;
     this.recognition.maxAlternatives = 1;
+    this.callback = callback;
     this.start();
   }
 
@@ -34,7 +35,7 @@ export class SpeechDetector {
         .filter((el) => el !== "");
 
       if (this.isFound(word, this.grammar)) {
-        console.log("ça bosse");
+        this.callback();
       }
     };
   }

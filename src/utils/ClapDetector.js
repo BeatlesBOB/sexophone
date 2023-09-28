@@ -13,9 +13,10 @@ export class ClapDetector {
   analyserNode;
   frequencyData;
   audioContext;
-  clapListeners;
+  callback;
 
-  constructor(options = {}) {
+  constructor(options = {}, callback) {
+    this.callback = callback;
     this.options = Object.assign(this.options, options);
     this.lastClapTime = 0;
     this.detectClap = this.detectClap.bind(this);
@@ -69,19 +70,9 @@ export class ClapDetector {
     const metMinClapInterval = timeSinceLastClap > this.options.minClapInterval;
     if (metClapThreshold && metMinClapInterval) {
       this.lastClapTime = Date.now();
-      this.clapListeners.forEach((listener) => listener());
+      this.callback();
     }
 
     this.frameRequest = requestAnimationFrame(this.detectClap);
-  }
-
-  // add listener
-  onClap(listener) {
-    this.clapListeners.push(listener);
-  }
-
-  // remove listener
-  offClap(listener) {
-    this.clapListeners = this.clapListeners.filter((l) => l !== listener);
   }
 }

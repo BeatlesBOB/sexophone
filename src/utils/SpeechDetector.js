@@ -6,7 +6,7 @@ const SpeechRecognitionEvent =
   window.SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent;
 
 export class SpeechDetector {
-  words = ["baise", "obèse", "amour", "l'amour","fini","jouie"];
+  words = ["baise", "obèse", "amour", "l'amour", "fini", "jouie"];
   callback;
   recognition = new SpeechRecognition();
   speechRecognitionList = new SpeechGrammarList();
@@ -33,6 +33,8 @@ export class SpeechDetector {
         .toString()
         .split(" ")
         .filter((el) => el !== "");
+
+      console.log(word);
 
       if (this.isFound(word, this.grammar)) {
         this.callback();

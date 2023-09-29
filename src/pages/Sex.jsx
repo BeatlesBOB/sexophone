@@ -9,9 +9,8 @@ export default function Sex() {
   const music = new Audio(audio);
 
   const handleStart = () => {
-    const isPlaying = !hasStart;
-    setHasStart(isPlaying);
-    if (isPlaying) {
+    setHasStart((prev) => !prev);
+    if (music.paused) {
       music.play();
     } else {
       music.pause();
@@ -28,10 +27,11 @@ export default function Sex() {
       speechDetector.stop();
       music.pause();
     };
-  }, [hasStart]);
+  }, []);
 
   return (
     <div className="bg-black h-screen w-screen">
+      <button onClick={handleStart}>dezfezezfezfefe</button>
       <video
         src={video}
         autoPlay={true}

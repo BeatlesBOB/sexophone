@@ -10,11 +10,11 @@ export default function Home() {
         </h1>
         <h2 className="text-white text-4xl font-bold">Avez-Vous 18 Ans ?</h2>
         <p className="text-white text-xl">
-          Ce site Web contien du matériel avec des restriction d'âge, y compris
-          de la nudité et des représentations explicites de l'activité sexuelle.
-          En vous inscrivant, vous affirmez que vous avez au moins 18 ans ou
-          l'âge de la majorité dans la juridiction à partir de laquelle vous
-          accédez au site Web et que vous consentez à visionner du contenu
+          Ce site Web contient du matériel avec des restrictions d'âge, y
+          compris de la nudité et des représentations explicites de l'activité
+          sexuelle. En vous inscrivant, vous affirmez que vous avez au moins 18
+          ans ou l'âge de la majorité dans la juridiction à partir de laquelle
+          vous accédez au site Web et que vous consentez à visionner du contenu
           sexuellement explicite.
         </p>
         <div className="flex gap-2.5 mt-8 justify-center">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="bg-black h-screen w-screen">
+    <div className="bg-black h-screen w-screen overflow-y-auto">
       <div className="shadow-2xl flex flex-col gap-4 max-w-3xl shadow-white/20 py-16 px-8 mx-auto border border-neutral-700 text-center fixed left-1/2 top-24 -translate-x-2/4">
         <h1 className="flex gap-0.5 justify-center items-center text-white text-3xl font-bold">
           <span className="bg-amber-500 p-1 text-black">Sex</span>

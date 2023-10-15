@@ -18,7 +18,7 @@ export default function Sex() {
   };
 
   useEffect(() => {
-    // const clapDetector = new ClapDetector(undefined, handleStart);
+    const clapDetector = new ClapDetector(undefined, handleStart);
     const speechDetector = new SpeechDetector(handleStart);
     music.volume = 1;
 

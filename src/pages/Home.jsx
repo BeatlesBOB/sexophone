@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="bg-black h-screen w-screen overflow-y-auto">
-      <div className="shadow-2xl flex flex-col gap-4 max-w-3xl shadow-white/20 py-16 px-8 mx-auto border border-neutral-700 text-center fixed left-1/2 top-24 -translate-x-2/4">
+    <div className="bg-black min-h-screen w-screen overflow-y-auto flex justify-center items-center px-5 py-16">
+      <div className="shadow-2xl flex flex-col gap-4 max-w-3xl shadow-white/20 py-16 px-8 border border-neutral-700 text-center">
         <h1 className="flex gap-0.5 justify-center items-center text-white text-3xl font-bold">
           <span className="bg-amber-500 p-1 text-black">Sex</span>
           ophone
@@ -17,7 +17,7 @@ export default function Home() {
           vous accédez au site Web et que vous consentez à visionner du contenu
           sexuellement explicite.
         </p>
-        <div className="flex gap-2.5 mt-8 justify-center">
+        <div className="flex flex-wrap gap-2.5 mt-8 justify-center">
           <Link
             to="/sex"
             className="bg-amber-500 text-black text-xl p-4 font-bold rounded"
